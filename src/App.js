@@ -4,17 +4,23 @@ import Postform from './components/Postform';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
-      <Postform />
-      <Posts />
+import { Provider } from 'react-redux';
 
-    </div>
-  );
+import store from './store'
+
+function App() {
+    return (
+        <Provider store={store}>
+            <div className="App">
+                <header className="App-header">
+                    <img src={logo} className="App-logo" alt="logo" />
+                </header>
+                <Postform />
+                <Posts />
+
+            </div>
+        </Provider>
+    );
 }
 
 export default App;
