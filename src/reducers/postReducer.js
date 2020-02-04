@@ -10,6 +10,11 @@ const initialState = {
 // the action needs to have a type, and this is what we are evaluating
 export default function (state = initialState, action) {
     switch (action.type) {
+        case FETCH_POSTS:
+            return {
+                ...state,
+                items: action.payload
+            }
         default:
             return state;
     }
